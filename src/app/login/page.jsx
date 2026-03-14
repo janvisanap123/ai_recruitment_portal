@@ -31,7 +31,7 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="relative min-h-screen overflow-hidden bg-gradient-to-b from-[#0b0b0f] via-[#0f0f12] to-black text-white">
+    <div className="relative min-h-screen overflow-hidden bg-linear-to-b from-[#0b0b0f] via-[#0f0f12] to-black text-white">
       <div className="magic-grid" aria-hidden />
       <div className="aceternity-spotlight" style={{ top: 120, left: 120 }} aria-hidden />
       <div className="aceternity-spotlight" style={{ bottom: -60, right: 120 }} aria-hidden />
@@ -47,7 +47,7 @@ export default function LoginPage() {
           </Link>
           <Link
             href="/signup"
-            className="pill bg-white/10 border border-white/15 text-white hover:border-[var(--accent)] hover:scale-105 transition"
+            className="pill bg-white/10 border border-white/15 text-white hover:border-(--accent) hover:scale-105 transition"
           >
             Create account
           </Link>
@@ -69,7 +69,7 @@ export default function LoginPage() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="name@company.com"
-                    className="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 text-sm focus:border-[var(--accent)] focus:outline-none"
+                    className="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 text-sm focus:border-(--accent) focus:outline-none"
                   />
                 </div>
                 <div className="space-y-2">
@@ -79,7 +79,7 @@ export default function LoginPage() {
                     type="password"
                     onChange={(e) => setPassword(e.target.value)}
                     placeholder="••••••••"
-                    className="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 text-sm focus:border-[var(--accent)] focus:outline-none"
+                    className="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 text-sm focus:border-(--accent) focus:outline-none"
                   />
                 </div>
               </div>
@@ -97,7 +97,7 @@ export default function LoginPage() {
                       onClick={() => setRole(r.id)}
                       className={`rounded-2xl px-4 py-3 border transition text-sm ${
                         role === r.id
-                          ? "border-[var(--accent)] bg-[var(--accent)] text-black font-semibold"
+                          ? "border-(--accent) bg-(--accent) text-black font-semibold"
                           : "border-white/10 bg-white/5 text-gray-200 hover:bg-white/10"
                       }`}
                     >
@@ -113,7 +113,7 @@ export default function LoginPage() {
               <div className="flex flex-col sm:flex-row gap-3 items-center">
                 <button
                   disabled={loading}
-                  className="w-full sm:w-auto pill bg-[var(--accent)] text-black font-semibold hover:scale-105 transition disabled:opacity-60"
+                  className="w-full sm:w-auto pill bg-(--accent) text-black font-semibold hover:scale-105 transition disabled:opacity-60"
                   type="submit"
                 >
                   {loading ? "Signing in..." : "Login"}
@@ -135,15 +135,15 @@ export default function LoginPage() {
             <p className="mono-label">What you get</p>
             <ul className="mt-4 space-y-3 text-sm text-gray-300">
               <li className="flex items-start gap-3">
-                <span className="mt-1 h-2 w-2 rounded-full bg-[var(--accent)]" />
+                <span className="mt-1 h-2 w-2 rounded-full bg-(--accent)" />
                 Resume parsing to structured candidate profiles.
               </li>
               <li className="flex items-start gap-3">
-                <span className="mt-1 h-2 w-2 rounded-full bg-[var(--accent)]" />
+                <span className="mt-1 h-2 w-2 rounded-full bg-(--accent)" />
                 AI assistant turns intent into database search.
               </li>
               <li className="flex items-start gap-3">
-                <span className="mt-1 h-2 w-2 rounded-full bg-[var(--accent)]" />
+                <span className="mt-1 h-2 w-2 rounded-full bg-(--accent)" />
                 Hiring pipeline stages with action controls.
               </li>
             </ul>

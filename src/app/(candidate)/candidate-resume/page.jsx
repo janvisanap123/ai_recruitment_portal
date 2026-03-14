@@ -58,7 +58,7 @@ export default function CandidateResumePage() {
         <section className="glass-card rounded-2xl p-5">
           <div
             className={`rounded-3xl border border-white/10 bg-white/3 p-6 sm:p-8 transition ${
-              dragOver ? "border-[var(--accent)] bg-[var(--accent)]/10" : ""
+              dragOver ? "border-(--accent) bg-(--accent)/10" : ""
             }`}
             onDragEnter={(e) => {
               e.preventDefault();
@@ -87,7 +87,7 @@ export default function CandidateResumePage() {
                 <p className="text-lg font-semibold">Drag & drop your resume</p>
                 <p className="text-sm text-gray-400">Supported formats: {acceptedLabel}</p>
               </div>
-              <label className="mt-2 inline-flex cursor-pointer pill bg-white/10 border border-white/15 text-white hover:border-[var(--accent)] hover:scale-105 transition">
+              <label className="mt-2 inline-flex cursor-pointer pill bg-white/10 border border-white/15 text-white hover:border-(--accent) hover:scale-105 transition">
                 Choose file
                 <input
                   type="file"
@@ -110,7 +110,7 @@ export default function CandidateResumePage() {
             <button
               onClick={upload}
               disabled={loading}
-              className="pill bg-[var(--accent)] text-black font-semibold hover:scale-105 transition disabled:opacity-60"
+              className="pill bg-(--accent) text-black font-semibold hover:scale-105 transition disabled:opacity-60"
             >
               {loading ? "Uploading..." : "Upload Resume"}
             </button>
@@ -127,7 +127,7 @@ export default function CandidateResumePage() {
           </div>
 
           {error && <p className="mt-3 text-sm text-red-300">{error}</p>}
-          {success && <p className="mt-3 text-sm text-[var(--accent)]">{success}</p>}
+          {success && <p className="mt-3 text-sm text-(--accent)">{success}</p>}
         </section>
 
         <aside className="glass-card rounded-2xl p-5 space-y-4 hover-tilt">

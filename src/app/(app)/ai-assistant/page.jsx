@@ -13,10 +13,14 @@ export default function AiAssistantPage() {
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
   const [candidates, setCandidates] = useState([]);
-  const endRef = useRef(null);
+  const chatScrollRef = useRef(null);
 
   useEffect(() => {
-    endRef.current?.scrollIntoView({ behavior: "smooth" });
+    if (!chatScrollRef.current) return;
+    chatScrollRef.current.scrollTo({
+      top: chatScrollRef.current.scrollHeight,
+      behavior: "smooth",
+    });
   }, [messages, candidates]);
 
   const stats = useMemo(() => {
@@ -70,7 +74,7 @@ export default function AiAssistantPage() {
         <div className="flex flex-wrap gap-2">
           <Link
             href="/dashboard"
-            className="pill bg-white/10 border border-white/15 text-white hover:border-[var(--accent)] hover:scale-105 transition"
+            className="pill bg-white/10 border border-white/15 text-white hover:border-(--accent) hover:scale-105 transition"
           >
             Back to Dashboard
           </Link>
@@ -86,19 +90,19 @@ export default function AiAssistantPage() {
             </div>
             {loading && <span className="text-xs text-gray-400">Thinking...</span>}
           </div>
-          <div className="flex-1 overflow-y-auto space-y-3 pr-1">
+          <div ref={chatScrollRef} className="flex-1 overflow-y-auto space-y-3 pr-1">
             {messages.map((m, idx) => (
               <div
                 key={idx}
                 className={`rounded-xl p-3 border border-white/10 ${
-                  m.role === "assistant" ? "bg-white/5" : "bg-[var(--accent)] text-black"
+                  m.role === "assistant" ? "bg-white/5" : "bg-(--accent) text-black"
                 }`}
               >
                 <p className="text-xs uppercase tracking-[0.08em] mb-1">{m.role}</p>
                 <p className="text-sm leading-relaxed">{m.content}</p>
               </div>
             ))}
-            <div ref={endRef} />
+            <div />
           </div>
           <form onSubmit={sendMessage} className="mt-4 space-y-2">
             <div className="flex flex-col sm:flex-row gap-2 items-stretch sm:items-center">
@@ -106,11 +110,11 @@ export default function AiAssistantPage() {
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 placeholder='Ask: "Find Python developers with 3 years experience"'
-                className="flex-1 rounded-xl bg-white/5 border border-white/10 px-3 py-3 text-sm focus:border-[var(--accent)] focus:outline-none"
+                className="flex-1 rounded-xl bg-white/5 border border-white/10 px-3 py-3 text-sm focus:border-(--accent) focus:outline-none"
               />
               <button
                 type="submit"
-                className="pill bg-[var(--accent)] text-black font-semibold hover:scale-105 transition whitespace-nowrap disabled:opacity-60"
+                className="pill bg-(--accent) text-black font-semibold hover:scale-105 transition whitespace-nowrap disabled:opacity-60"
                 disabled={loading}
               >
                 Send
@@ -187,7 +191,7 @@ export default function AiAssistantPage() {
                         <td className="px-4 py-3 text-right">
                           <Link
                             href={`/candidate/${c.id}`}
-                            className="inline-flex items-center justify-center px-4 py-2 rounded-full border border-white/20 text-white hover:border-[var(--accent)] hover:scale-105 transition text-xs bg-white/5"
+                            className="inline-flex items-center justify-center px-4 py-2 rounded-full border border-white/20 text-white hover:border-(--accent) hover:scale-105 transition text-xs bg-white/5"
                           >
                             View
                           </Link>

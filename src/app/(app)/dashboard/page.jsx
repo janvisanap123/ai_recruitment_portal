@@ -71,13 +71,13 @@ export default function RecruiterDashboard() {
         <div className="flex flex-wrap gap-2">
           <Link
             href="/upload-resume"
-            className="pill bg-[var(--accent)] text-black font-semibold hover:scale-105 transition"
+            className="pill bg-(--accent) text-black font-semibold hover:scale-105 transition"
           >
             Upload Resume
           </Link>
           <Link
             href="/ai-assistant"
-            className="pill bg-white/10 border border-white/20 text-white hover:border-[var(--accent)] hover:scale-105 transition"
+            className="pill bg-white/10 border border-white/20 text-white hover:border-(--accent) hover:scale-105 transition"
           >
             Open AI Assistant
           </Link>
@@ -102,7 +102,7 @@ export default function RecruiterDashboard() {
               value={filters.skills}
               onChange={(e) => updateFilter("skills", e.target.value)}
               placeholder="e.g. Python, React"
-              className="w-full rounded-xl bg-white/5 border border-white/10 px-3 py-2 text-sm focus:border-[var(--accent)] focus:outline-none"
+              className="w-full rounded-xl bg-white/5 border border-white/10 px-3 py-2 text-sm focus:border-(--accent) focus:outline-none"
             />
           </div>
           <div className="space-y-3">
@@ -111,7 +111,7 @@ export default function RecruiterDashboard() {
               value={filters.experience}
               onChange={(e) => updateFilter("experience", e.target.value)}
               placeholder="e.g. 3"
-              className="w-full rounded-xl bg-white/5 border border-white/10 px-3 py-2 text-sm focus:border-[var(--accent)] focus:outline-none"
+              className="w-full rounded-xl bg-white/5 border border-white/10 px-3 py-2 text-sm focus:border-(--accent) focus:outline-none"
             />
           </div>
           <div className="space-y-3">
@@ -120,12 +120,12 @@ export default function RecruiterDashboard() {
               value={filters.location}
               onChange={(e) => updateFilter("location", e.target.value)}
               placeholder="e.g. Remote, NYC"
-              className="w-full rounded-xl bg-white/5 border border-white/10 px-3 py-2 text-sm focus:border-[var(--accent)] focus:outline-none"
+              className="w-full rounded-xl bg-white/5 border border-white/10 px-3 py-2 text-sm focus:border-(--accent) focus:outline-none"
             />
           </div>
           <button
             onClick={handleFilter}
-            className="w-full pill bg-[var(--accent)] text-black font-semibold hover:scale-105 transition"
+            className="w-full pill bg-(--accent) text-black font-semibold hover:scale-105 transition"
           >
             Apply Filters
           </button>
@@ -144,11 +144,11 @@ export default function RecruiterDashboard() {
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder="Search candidates (e.g. Python developer)"
-                className="flex-1 rounded-xl bg-white/5 border border-white/10 px-4 py-3 text-sm focus:border-[var(--accent)] focus:outline-none"
+                className="flex-1 rounded-xl bg-white/5 border border-white/10 px-4 py-3 text-sm focus:border-(--accent) focus:outline-none"
               />
               <button
                 onClick={handleSearch}
-                className="pill bg-[var(--accent)] text-black font-semibold hover:scale-105 transition"
+                className="pill bg-(--accent) text-black font-semibold hover:scale-105 transition"
               >
                 Search
               </button>
@@ -229,7 +229,7 @@ export default function RecruiterDashboard() {
                           <td className="px-4 py-4 text-right align-middle">
                             <Link
                               href={`/candidate/${c.id ?? ""}`}
-                              className="inline-flex items-center justify-center px-4 py-2 rounded-full border border-white/20 text-white hover:border-[var(--accent)] hover:scale-105 transition text-xs bg-white/5"
+                              className="inline-flex items-center justify-center px-4 py-2 rounded-full border border-white/20 text-white hover:border-(--accent) hover:scale-105 transition text-xs bg-white/5"
                             >
                               View Profile
                             </Link>
@@ -248,7 +248,7 @@ export default function RecruiterDashboard() {
       {/* Floating AI Assistant Button */}
       <Link
         href="/ai-assistant"
-        className="fixed bottom-6 right-6 pill bg-[var(--accent)] text-black font-semibold shadow-lg shadow-[var(--accent)]/30 hover:shadow-[var(--accent)]/50 hover:scale-105 transition-all flex items-center gap-2"
+        className="fixed bottom-6 right-6 pill bg-(--accent) text-black font-semibold shadow-lg shadow-(--accent)/30 hover:shadow-(--accent)/50 hover:scale-105 transition-all flex items-center gap-2"
       >
         <span className="h-2 w-2 rounded-full bg-black" />
         AI Recruiter Assistant

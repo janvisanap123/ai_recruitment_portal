@@ -27,13 +27,13 @@ export default function CandidateDashboardPage() {
         <div className="flex flex-wrap gap-2">
           <Link
             href="/candidate-resume"
-            className="pill bg-[var(--accent)] text-black font-semibold hover:scale-105 transition"
+            className="pill bg-(--accent) text-black font-semibold hover:scale-105 transition"
           >
             Upload Resume
           </Link>
           <Link
             href="/applications"
-            className="pill bg-white/10 border border-white/20 text-white hover:border-[var(--accent)] hover:scale-105 transition"
+            className="pill bg-white/10 border border-white/20 text-white hover:border-(--accent) hover:scale-105 transition"
           >
             View Applications
           </Link>
@@ -61,7 +61,7 @@ export default function CandidateDashboardPage() {
                   onClick={() => setStageIdx(idx)}
                   className={`rounded-xl px-2 py-2 text-[11px] border transition ${
                     idx === stageIdx
-                      ? "bg-[var(--accent)] text-black border-[var(--accent)] font-semibold"
+                      ? "bg-(--accent) text-black border-(--accent) font-semibold"
                       : "bg-white/5 border-white/10 text-gray-200 hover:bg-white/10"
                   }`}
                 >
@@ -84,7 +84,7 @@ export default function CandidateDashboardPage() {
               <p className="mono-label">Profile completeness</p>
               <p className="mt-2 text-2xl font-semibold">86%</p>
               <div className="mt-3 h-2 rounded-full bg-white/10 overflow-hidden">
-                <div className="h-full w-[86%] bg-[var(--accent)]" />
+                <div className="h-full w-[86%] bg-(--accent)" />
               </div>
             </div>
           </div>

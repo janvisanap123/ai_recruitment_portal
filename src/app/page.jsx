@@ -54,7 +54,7 @@ const testimonials = [
 
 export default function Landing() {
   return (
-    <div className="relative min-h-screen overflow-hidden bg-gradient-to-b from-[#0b0b0f] via-[#0f0f12] to-black text-white">
+    <div className="relative min-h-screen overflow-hidden bg-linear-to-b from-[#0b0b0f] via-[#0f0f12] to-black text-white">
       <div className="magic-grid" aria-hidden />
       <div className="aceternity-spotlight" style={{ top: 120, left: 120 }} aria-hidden />
       <div className="aceternity-spotlight" style={{ bottom: -40, right: 80 }} aria-hidden />
@@ -72,13 +72,13 @@ export default function Landing() {
           <a href="#demo" className="hidden sm:inline text-sm text-gray-300 hover:text-white transition">Demo</a>
           <Link
             href="/login"
-            className="hidden sm:inline pill border border-white/15 text-sm text-white hover:border-[var(--accent)] hover:scale-105 transition"
+            className="hidden sm:inline pill border border-white/15 text-sm text-white hover:border-(--accent) hover:scale-105 transition"
           >
             Login
           </Link>
           <Link
             href="/signup"
-            className="pill bg-[var(--accent)] text-black hover:scale-105 transition font-semibold"
+            className="pill bg-(--accent) text-black hover:scale-105 transition font-semibold"
           >
             Sign Up
           </Link>
@@ -89,17 +89,17 @@ export default function Landing() {
         {/* Hero */}
         <section className="pt-10 grid lg:grid-cols-[1.1fr_0.9fr] gap-12 items-center">
           <div className="space-y-6">
-            <div className="inline-flex items-center gap-3 px-3 py-2 neon-border rounded-full text-xs uppercase tracking-[0.2em] text-[var(--muted)]">
+            <div className="inline-flex items-center gap-3 px-3 py-2 neon-border rounded-full text-xs uppercase tracking-[0.2em] text-(--muted)">
               Aceternity Motion · Magic UI Effects
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight">
-              AI-powered hiring that feels <span className="text-[var(--accent)]">telepathic</span>.
+              AI-powered hiring that feels <span className="text-(--accent)">telepathic</span>.
             </h1>
             <p className="text-lg text-gray-300 max-w-2xl">
               Parse resumes, collapse duplicates, search semantically, and move candidates through a live, animated pipeline. No blue gradients. Just a bold, monochrome control surface built for elite teams.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Link href="/signup" className="pill bg-[var(--accent)] text-black hover:scale-105 transition font-semibold shadow-lg">
+              <Link href="/signup" className="pill bg-(--accent) text-black hover:scale-105 transition font-semibold shadow-lg">
                 Get Started Free
               </Link>
               <a
@@ -110,16 +110,16 @@ export default function Landing() {
               </a>
               <Link
                 href="/login"
-                className="pill bg-white/10 border border-white/15 text-white hover:border-[var(--accent)] hover:scale-105 transition"
+                className="pill bg-white/10 border border-white/15 text-white hover:border-(--accent) hover:scale-105 transition"
               >
                 Login
               </Link>
             </div>
             <div className="divider-line" />
             <div className="flex flex-wrap gap-6 text-sm text-gray-300">
-              <div className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-[var(--accent)]" /> SOC2-ready data rooms</div>
-              <div className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-[var(--accent)]" /> Semantic + vector search</div>
-              <div className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-[var(--accent)]" /> Pipeline automations</div>
+              <div className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-(--accent)" /> SOC2-ready data rooms</div>
+              <div className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-(--accent)" /> Semantic + vector search</div>
+              <div className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-(--accent)" /> Pipeline automations</div>
             </div>
           </div>
 
@@ -135,7 +135,7 @@ export default function Landing() {
                   <p className="text-xs text-gray-400">Resume Upload</p>
                   <p className="font-semibold">elena-rojas.pdf</p>
                 </div>
-                <span className="pill bg-[var(--accent)] text-black">Parsing</span>
+                <span className="pill bg-(--accent) text-black">Parsing</span>
               </div>
               <div className="p-4 rounded-2xl bg-white/3 border border-white/10">
                 <p className="text-xs text-gray-400 mb-1">AI Summary</p>
@@ -194,7 +194,7 @@ export default function Landing() {
                   <p className="mono-label mb-2">0{idx + 1}</p>
                   <p className="font-semibold">{step}</p>
                   {idx < workflow.length - 1 && (
-                    <span className="absolute right-[-10px] top-1/2 -translate-y-1/2 text-[var(--accent)]">→</span>
+                    <span className="absolute right-[-10px] top-1/2 -translate-y-1/2 text-(--accent)">→</span>
                   )}
                 </div>
               ))}
@@ -249,7 +249,7 @@ export default function Landing() {
             <p className="text-gray-300 mt-2">Unlimited resume parsing in pilot · SOC2-ready · Dedicated onboarding.</p>
           </div>
           <div className="flex flex-col sm:flex-row gap-3">
-            <a href="#" className="pill bg-[var(--accent)] text-black font-semibold hover:scale-105 transition">Start Hiring Smarter</a>
+            <a href="#" className="pill bg-(--accent) text-black font-semibold hover:scale-105 transition">Start Hiring Smarter</a>
             <a href="mailto:hello@vectorhire.ai" className="pill border border-white/10 text-white hover:border-white/30 transition">Talk to us</a>
           </div>
         </section>

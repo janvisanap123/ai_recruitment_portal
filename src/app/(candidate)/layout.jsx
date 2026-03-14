@@ -23,12 +23,12 @@ export default function CandidateLayout({ children }) {
   };
 
   return (
-    <div className="relative overflow-hidden bg-gradient-to-b from-[#0b0b0f] via-[#0f0f12] to-black text-white">
+    <div className="relative min-h-screen overflow-hidden bg-linear-to-b from-[#0b0b0f] via-[#0f0f12] to-black text-white">
       <div className="magic-grid" aria-hidden />
       <div className="aceternity-spotlight" style={{ top: 40, left: 40 }} aria-hidden />
       <div className="aceternity-spotlight" style={{ bottom: -80, right: 40 }} aria-hidden />
 
-      <div className="relative z-10 flex">
+      <div className="relative z-10 flex min-h-screen">
         {/* Sidebar */}
         <aside className="hidden lg:flex w-64 flex-col border-r border-white/10 glass-card">
           <div className="flex items-center gap-3 px-5 pt-6 pb-4">
@@ -52,11 +52,11 @@ export default function CandidateLayout({ children }) {
                 }`}
               >
                 <span className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent)] opacity-0 group-hover:opacity-100 transition" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-(--accent) opacity-0 group-hover:opacity-100 transition" />
                   {item.label}
                 </span>
                 {isActive(item.href) && (
-                  <span className="text-[10px] uppercase tracking-[0.18em] text-[var(--accent)]">
+                  <span className="text-[10px] uppercase tracking-[0.18em] text-(--accent)">
                     Active
                   </span>
                 )}
@@ -100,7 +100,7 @@ export default function CandidateLayout({ children }) {
               </button>
               <button
                 type="button"
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 bg-white/5 text-xs font-semibold hover:border-[var(--accent)] transition"
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 bg-white/5 text-xs font-semibold hover:border-(--accent) transition"
               >
                 C
               </button>
@@ -133,7 +133,7 @@ export default function CandidateLayout({ children }) {
             </div>
           )}
 
-          <main className="px-4 sm:px-6 py-6 overflow-x-hidden">
+          <main className="flex-1 px-4 sm:px-6 py-6 overflow-x-hidden">
             <div className="max-w-6xl mx-auto">{children}</div>
           </main>
         </div>
