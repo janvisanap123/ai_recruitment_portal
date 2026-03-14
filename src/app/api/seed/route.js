@@ -147,63 +147,28 @@ const dummyCandidates = [
     candidateScore: 90,
     rating: 5,
   },
+  {
+    name: "JANVI SANDEEP SANAP",
+    email: "janvisanap123@gmail.com",
+    phone: "8830333302",
+    skills: "C, C++, Python, HTML, CSS, JavaScript, MySQL, MS Office",
+    experience: 0,
+    location: "Vadodara, Gujarat",
+    education: "Bachelor of Technology (B.Tech) – Computer Science Engineering, Parul University, Vadodara",
+    resumeText: "JANVI SANDEEP SANAP \n8830333302 | janvisanap123@gmail.com \nLinkedIn: janvi sanap \nVadodara, Gujarat \n\nCareer Objective \nA dedicated and curious Computer Science student with a strong foundation in programming and problem-solving. Eager to explore innovative technologies, enhance my skills, and contribute meaningfully to projects that make a real-world impact. \nEducation \n- Bachelor of Technology (B.Tech) - Computer Science Engineering(Parul University, Vadodara) \n- 2024 - 2028 \n- Current Year: 2nd Year(CGPA (1st Year): 7.72 / 10) \n- Higher Secondary Certificate (12th Grade)(Maharashtra State Board) \n- Percentage: 54% \n- Secondary School Certificate (10th Grade)Maharashtra State Board \n- Percentage: 95.20% \nSkills \n- Programming: C, C++, Python \n- Web: HTML, CSS, JavaScript \n- Database: MySQL \n- Tools: MS Office \n- Soft Skills: Communication, Teamwork, Problem-solving \nAchievements / Extra-Curricular Activities \n- Scored 95.20% in SSC Maharashtra Board \n- TRAINING AND PLACEMENT CELL COORDINATOR AT PARUL UNIVERSITY.",
+    pipelineStatus: "Applied",
+    linkedin: "https://linkedin.com/in/janvi-sanap",
+    candidateScore: 75,
+    rating: 4,
+  },
 ];
 
 export async function POST(req) {
   try {
-    // Delete existing data to avoid duplicates
+    // Delete existing candidates to avoid duplicates
     await prisma.candidate.deleteMany({});
-    await prisma.employee.deleteMany({});
-    await prisma.user.deleteMany({});
 
-    // Create or update dummy HR users (using upsert for idempotency)
-    const hrUsers = await Promise.all(
-      dummyHRUsers.map((u) =>
-        prisma.user.upsert({
-          where: { email: u.email },
-          update: {
-            role: u.role,
-            isActive: true,
-            emailVerified: true,
-            employee: {
-              upsert: {
-                create: {
-                  employeeCode: `HR-${Math.random().toString(36).substr(2, 9).toUpperCase()}`,
-                  fullName: u.name,
-                  designation: u.designation,
-                  department: u.department,
-                  joiningDate: new Date(),
-                },
-                update: {
-                  fullName: u.name,
-                  designation: u.designation,
-                  department: u.department,
-                },
-              },
-            },
-          },
-          create: {
-            email: u.email,
-            password: u.password, // Note: in production, hash this!
-            role: u.role,
-            isActive: true,
-            emailVerified: true,
-            employee: {
-              create: {
-                employeeCode: `HR-${Math.random().toString(36).substr(2, 9).toUpperCase()}`,
-                fullName: u.name,
-                designation: u.designation,
-                department: u.department,
-                joiningDate: new Date(),
-              },
-            },
-          },
-          include: { employee: true },
-        })
-      )
-    );
-
-    // Create or update dummy candidates (using upsert for idempotency)
+    // Create dummy candidates
     const createdCandidates = await Promise.all(
       dummyCandidates.map((c) =>
         prisma.candidate.upsert({
@@ -253,8 +218,7 @@ export async function POST(req) {
 
     return NextResponse.json(
       {
-        message: `Seeded ${hrUsers.length} HR users and ${createdCandidates.length} candidates`,
-        hrUsers,
+        message: `Seeded ${createdCandidates.length} candidates`,
         candidates: createdCandidates,
       },
       { status: 200 }
