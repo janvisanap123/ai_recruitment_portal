@@ -65,7 +65,7 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="relative min-h-screen overflow-hidden bg-gradient-to-b from-[#0b0b0f] via-[#0f0f12] to-black text-white">
+    <div className="relative min-h-screen overflow-hidden bg-linear-to-b from-[#0b0b0f] via-[#0f0f12] to-black text-white">
       <div className="magic-grid" aria-hidden />
       <div className="aceternity-spotlight" style={{ top: 120, left: 120 }} aria-hidden />
       <div className="aceternity-spotlight" style={{ bottom: -60, right: 120 }} aria-hidden />
@@ -81,7 +81,7 @@ export default function LoginPage() {
           </Link>
           <Link
             href="/signup"
-            className="pill bg-white/10 border border-white/15 text-white hover:border-[var(--accent)] hover:scale-105 transition"
+            className="pill bg-white/10 border border-white/15 text-white hover:border-(--accent) hover:scale-105 transition"
           >
             Create account
           </Link>
@@ -248,15 +248,15 @@ export default function LoginPage() {
             <p className="mono-label">What you get</p>
             <ul className="mt-4 space-y-3 text-sm text-gray-300">
               <li className="flex items-start gap-3">
-                <span className="mt-1 h-2 w-2 rounded-full bg-[var(--accent)]" />
+                <span className="mt-1 h-2 w-2 rounded-full bg-(--accent)" />
                 Resume parsing to structured candidate profiles.
               </li>
               <li className="flex items-start gap-3">
-                <span className="mt-1 h-2 w-2 rounded-full bg-[var(--accent)]" />
+                <span className="mt-1 h-2 w-2 rounded-full bg-(--accent)" />
                 AI assistant turns intent into database search.
               </li>
               <li className="flex items-start gap-3">
-                <span className="mt-1 h-2 w-2 rounded-full bg-[var(--accent)]" />
+                <span className="mt-1 h-2 w-2 rounded-full bg-(--accent)" />
                 Hiring pipeline stages with action controls.
               </li>
             </ul>

@@ -114,11 +114,11 @@ export default function CandidateProfileModal({ candidate, isOpen, onClose }) {
                 Experience & Background
               </h3>
               <div className="grid grid-cols-2 gap-4">
-                <div className="bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl p-6 border border-purple-200">
+                <div className="bg-linear-to-br from-purple-50 to-purple-100 rounded-2xl p-6 border border-purple-200">
                   <p className="text-sm font-semibold text-gray-600 uppercase tracking-wide">Years of Experience</p>
                   <p className="text-4xl font-bold text-purple-600 mt-2">{candidate.experienceYears}</p>
                 </div>
-                <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-6 border border-blue-200">
+                <div className="bg-linear-to-br from-blue-50 to-blue-100 rounded-2xl p-6 border border-blue-200">
                   <p className="text-sm font-semibold text-gray-600 uppercase tracking-wide">Total Skills</p>
                   <p className="text-4xl font-bold text-blue-600 mt-2">{candidate.skills.split(',').length}</p>
                 </div>
@@ -142,7 +142,7 @@ export default function CandidateProfileModal({ candidate, isOpen, onClose }) {
                     href={link.url.startsWith('http') ? link.url : `https://${link.url}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center px-5 py-3 bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 border-2 border-gray-200 hover:border-blue-300 rounded-xl text-gray-700 hover:text-blue-600 transition-all duration-200 font-semibold group"
+                    className="inline-flex items-center px-5 py-3 bg-linear-to-r hover:from-blue-50 hover:to-purple-50 border-2 border-gray-200 hover:border-blue-300 rounded-xl text-gray-700 hover:text-blue-600 transition-all duration-200 font-semibold group"
                   >
                     <span>{link.name}</span>
                     <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -172,7 +172,7 @@ export default function CandidateProfileModal({ candidate, isOpen, onClose }) {
                 return (
                   <span
                     key={idx}
-                    className="px-4 py-2 bg-gradient-to-r from-blue-50 to-blue-100 border-2 border-blue-200 text-blue-700 rounded-xl text-sm font-semibold hover:border-blue-400 transition-all cursor-default"
+                    className="px-4 py-2 bg-linear-to-r from-blue-50 to-blue-100 border-2 border-blue-200 text-blue-700 rounded-xl text-sm font-semibold hover:border-blue-400 transition-all cursor-default"
                   >
                     {s}
                   </span>

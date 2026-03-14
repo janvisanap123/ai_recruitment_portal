@@ -85,7 +85,7 @@ export default function UploadResumePage() {
         <section className="glass-card rounded-2xl p-5">
           <div
             className={`rounded-3xl border border-white/10 bg-white/3 p-6 sm:p-8 transition ${
-              dragOver ? "border-[var(--accent)] bg-[var(--accent)]/10" : ""
+              dragOver ? "border-(--accent) bg-(--accent)/10" : ""
             }`}
             onDragEnter={(e) => {
               e.preventDefault();
@@ -114,7 +114,7 @@ export default function UploadResumePage() {
                 <p className="text-lg font-semibold">Drag & drop a resume</p>
                 <p className="text-sm text-gray-400">Supported formats: {acceptedLabel}</p>
               </div>
-              <label className="mt-2 inline-flex cursor-pointer pill bg-white/10 border border-white/15 text-white hover:border-[var(--accent)] hover:scale-105 transition">
+              <label className="mt-2 inline-flex cursor-pointer pill bg-white/10 border border-white/15 text-white hover:border-(--accent) hover:scale-105 transition">
                 Choose files
                 <input
                   type="file"
@@ -144,7 +144,7 @@ export default function UploadResumePage() {
             <button
               onClick={upload}
               disabled={loading}
-              className="pill bg-[var(--accent)] text-black font-semibold hover:scale-105 transition disabled:opacity-60"
+              className="pill bg-(--accent) text-black font-semibold hover:scale-105 transition disabled:opacity-60"
             >
               {loading ? "Uploading..." : "Upload Resume"}
             </button>
@@ -164,7 +164,7 @@ export default function UploadResumePage() {
 
           {error && <p className="mt-3 text-sm text-red-300">{error}</p>}
           {successMessage && (
-            <p className="mt-3 text-sm text-[var(--accent)]">{successMessage}</p>
+            <p className="mt-3 text-sm text-(--accent)">{successMessage}</p>
           )}
           {resultErrors.length > 0 && (
             <div className="mt-3 rounded-2xl border border-white/10 bg-white/5 p-4">

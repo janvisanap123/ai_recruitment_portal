@@ -80,13 +80,13 @@ export default function CandidateProfilePage() {
         <div className="flex flex-wrap gap-2">
           <Link
             href="/candidates"
-            className="pill bg-white/10 border border-white/15 text-white hover:border-[var(--accent)] hover:scale-105 transition"
+            className="pill bg-white/10 border border-white/15 text-white hover:border-(--accent) hover:scale-105 transition"
           >
             Back to Candidates
           </Link>
           <Link
             href="/ai-assistant"
-            className="pill bg-[var(--accent)] text-black font-semibold hover:scale-105 transition"
+            className="pill bg-(--accent) text-black font-semibold hover:scale-105 transition"
           >
             AI Assistant
           </Link>
@@ -155,7 +155,7 @@ export default function CandidateProfilePage() {
                       disabled={savingStage}
                       className={`rounded-xl px-2 py-2 text-[11px] border transition ${
                         idx <= stageIdx
-                          ? "bg-[var(--accent)]/90 text-black border-[var(--accent)] font-semibold"
+                          ? "bg-(--accent)/90 text-black border-(--accent) font-semibold"
                           : "bg-white/5 border-white/10 text-gray-200 hover:bg-white/10"
                       }`}
                       title={`Move to ${s}`}
@@ -167,7 +167,7 @@ export default function CandidateProfilePage() {
 
                 <div className="mt-3 h-2 rounded-full bg-white/10 overflow-hidden">
                   <div
-                    className="h-full bg-[var(--accent)]"
+                    className="h-full bg-(--accent)"
                     style={{ width: `${((stageIdx + 1) / stages.length) * 100}%` }}
                   />
                 </div>
@@ -176,7 +176,7 @@ export default function CandidateProfilePage() {
                   <button
                     type="button"
                     onClick={() => updateStage("Shortlisted")}
-                    className="pill bg-white/10 border border-white/15 text-white hover:border-[var(--accent)] hover:scale-105 transition text-xs"
+                    className="pill bg-white/10 border border-white/15 text-white hover:border-(--accent) hover:scale-105 transition text-xs"
                     disabled={savingStage}
                   >
                     Shortlist Candidate
@@ -184,7 +184,7 @@ export default function CandidateProfilePage() {
                   <button
                     type="button"
                     onClick={() => updateStage("Interview")}
-                    className="pill bg-white/10 border border-white/15 text-white hover:border-[var(--accent)] hover:scale-105 transition text-xs"
+                    className="pill bg-white/10 border border-white/15 text-white hover:border-(--accent) hover:scale-105 transition text-xs"
                     disabled={savingStage}
                   >
                     Move to Interview Stage
