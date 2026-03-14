@@ -42,7 +42,7 @@ export default function HrProfilePage() {
         </div>
         <button
           onClick={() => router.push("/")}
-          className="pill bg-white/10 border border-white/15 text-white hover:border-[var(--accent)] hover:scale-105 transition"
+          className="pill bg-white/10 border border-white/15 text-white hover:border-(--accent) hover:scale-105 transition"
         >
           Logout
         </button>
@@ -57,7 +57,7 @@ export default function HrProfilePage() {
                 <input
                   value={form.name}
                   onChange={(e) => update("name", e.target.value)}
-                  className="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 text-sm focus:border-[var(--accent)] focus:outline-none"
+                  className="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 text-sm focus:border-(--accent) focus:outline-none"
                 />
               </div>
               <div className="space-y-2">
@@ -65,7 +65,7 @@ export default function HrProfilePage() {
                 <input
                   value={form.email}
                   onChange={(e) => update("email", e.target.value)}
-                  className="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 text-sm focus:border-[var(--accent)] focus:outline-none"
+                  className="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 text-sm focus:border-(--accent) focus:outline-none"
                 />
               </div>
             </div>
@@ -75,7 +75,7 @@ export default function HrProfilePage() {
               <input
                 value={form.company}
                 onChange={(e) => update("company", e.target.value)}
-                className="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 text-sm focus:border-[var(--accent)] focus:outline-none"
+                className="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 text-sm focus:border-(--accent) focus:outline-none"
               />
             </div>
 
@@ -86,7 +86,7 @@ export default function HrProfilePage() {
                 type="password"
                 onChange={(e) => update("password", e.target.value)}
                 placeholder="New password"
-                className="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 text-sm focus:border-[var(--accent)] focus:outline-none"
+                className="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 text-sm focus:border-(--accent) focus:outline-none"
               />
               <p className="text-xs text-gray-400">
                 Demo UI only. Wire this to your authentication provider later.
@@ -97,11 +97,11 @@ export default function HrProfilePage() {
               <button
                 type="submit"
                 disabled={saving}
-                className="pill bg-[var(--accent)] text-black font-semibold hover:scale-105 transition disabled:opacity-60"
+                className="pill bg-(--accent) text-black font-semibold hover:scale-105 transition disabled:opacity-60"
               >
                 {saving ? "Saving..." : "Save changes"}
               </button>
-              {saved && <span className="text-sm text-[var(--accent)]">Saved</span>}
+              {saved && <span className="text-sm text-(--accent)">Saved</span>}
             </div>
           </form>
         </section>

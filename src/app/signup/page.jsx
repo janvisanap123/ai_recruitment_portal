@@ -37,7 +37,7 @@ export default function SignupPage() {
   };
 
   return (
-    <div className="relative min-h-screen overflow-hidden bg-gradient-to-b from-[#0b0b0f] via-[#0f0f12] to-black text-white">
+    <div className="relative min-h-screen overflow-hidden bg-linear-to-b from-[#0b0b0f] via-[#0f0f12] to-black text-white">
       <div className="magic-grid" aria-hidden />
       <div className="aceternity-spotlight" style={{ top: 100, left: 140 }} aria-hidden />
       <div className="aceternity-spotlight" style={{ bottom: -80, right: 140 }} aria-hidden />
@@ -53,7 +53,7 @@ export default function SignupPage() {
           </Link>
           <Link
             href="/login"
-            className="pill bg-white/10 border border-white/15 text-white hover:border-[var(--accent)] hover:scale-105 transition"
+            className="pill bg-white/10 border border-white/15 text-white hover:border-(--accent) hover:scale-105 transition"
           >
             Login
           </Link>
@@ -75,7 +75,7 @@ export default function SignupPage() {
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     placeholder="Your name"
-                    className="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 text-sm focus:border-[var(--accent)] focus:outline-none"
+                    className="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 text-sm focus:border-(--accent) focus:outline-none"
                   />
                 </div>
                 <div className="space-y-2">
@@ -84,7 +84,7 @@ export default function SignupPage() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="name@company.com"
-                    className="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 text-sm focus:border-[var(--accent)] focus:outline-none"
+                    className="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 text-sm focus:border-(--accent) focus:outline-none"
                   />
                 </div>
               </div>
@@ -97,7 +97,7 @@ export default function SignupPage() {
                     type="password"
                     onChange={(e) => setPassword(e.target.value)}
                     placeholder="Create a password"
-                    className="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 text-sm focus:border-[var(--accent)] focus:outline-none"
+                    className="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 text-sm focus:border-(--accent) focus:outline-none"
                   />
                 </div>
                 <div className="space-y-2">
@@ -113,7 +113,7 @@ export default function SignupPage() {
                         onClick={() => setRole(r.id)}
                         className={`rounded-2xl px-4 py-3 border transition text-sm ${
                           role === r.id
-                            ? "border-[var(--accent)] bg-[var(--accent)] text-black font-semibold"
+                            ? "border-(--accent) bg-(--accent) text-black font-semibold"
                             : "border-white/10 bg-white/5 text-gray-200 hover:bg-white/10"
                         }`}
                       >
@@ -131,7 +131,7 @@ export default function SignupPage() {
                     value={company}
                     onChange={(e) => setCompany(e.target.value)}
                     placeholder="Company"
-                    className="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 text-sm focus:border-[var(--accent)] focus:outline-none"
+                    className="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 text-sm focus:border-(--accent) focus:outline-none"
                   />
                 </div>
               )}
@@ -141,7 +141,7 @@ export default function SignupPage() {
               <div className="flex flex-col sm:flex-row gap-3 items-center">
                 <button
                   disabled={loading}
-                  className="w-full sm:w-auto pill bg-[var(--accent)] text-black font-semibold hover:scale-105 transition disabled:opacity-60"
+                  className="w-full sm:w-auto pill bg-(--accent) text-black font-semibold hover:scale-105 transition disabled:opacity-60"
                   type="submit"
                 >
                   {loading ? "Creating..." : "Create account"}

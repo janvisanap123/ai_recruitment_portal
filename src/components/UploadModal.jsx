@@ -8,7 +8,7 @@ export default function UploadModal({ isOpen, onClose, onUploadSuccess }) {
     const [error, setError] = useState("");
 
     if (!isOpen) return null;
-
+// gi8thao
     const handleUpload = async (e) => {
         e.preventDefault();
         if (!file) {
@@ -42,7 +42,7 @@ export default function UploadModal({ isOpen, onClose, onUploadSuccess }) {
         <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 z-50 animate-fade-in">
             <div className="bg-white rounded-3xl shadow-2xl w-full max-w-md overflow-hidden">
                 {/* Header */}
-                <div className="bg-gradient-to-r from-blue-600 to-blue-700 px-8 py-8">
+                <div className="bg-linear-to-r from-blue-600 to-blue-700 px-8 py-8">
                     <h2 className="text-3xl font-bold text-white mb-2">Upload Resume</h2>
                     <p className="text-blue-100">PDF files are automatically parsed and analyzed</p>
                 </div>
@@ -121,7 +121,7 @@ export default function UploadModal({ isOpen, onClose, onUploadSuccess }) {
                             <button
                                 type="submit"
                                 disabled={isUploading || !file}
-                                className="flex-1 px-4 py-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-blue-500/30 transition-all duration-300 transform hover:scale-105 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center btn-hover"
+                                className="flex-1 px-4 py-3 bg-linear-to-r from-blue-600 to-blue-700 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-blue-500/30 transition-all duration-300 transform hover:scale-105 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center btn-hover"
                             >
                                 {isUploading ? (
                                     <>

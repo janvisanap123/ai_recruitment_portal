@@ -47,7 +47,7 @@ export default function CandidateProfilePage() {
                 <input
                   value={form.name}
                   onChange={(e) => update("name", e.target.value)}
-                  className="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 text-sm focus:border-[var(--accent)] focus:outline-none"
+                  className="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 text-sm focus:border-(--accent) focus:outline-none"
                 />
               </div>
               <div className="space-y-2">
@@ -55,7 +55,7 @@ export default function CandidateProfilePage() {
                 <input
                   value={form.email}
                   onChange={(e) => update("email", e.target.value)}
-                  className="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 text-sm focus:border-[var(--accent)] focus:outline-none"
+                  className="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 text-sm focus:border-(--accent) focus:outline-none"
                 />
               </div>
             </div>
@@ -67,7 +67,7 @@ export default function CandidateProfilePage() {
                   value={form.skills}
                   onChange={(e) => update("skills", e.target.value)}
                   placeholder="Comma-separated"
-                  className="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 text-sm focus:border-[var(--accent)] focus:outline-none"
+                  className="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 text-sm focus:border-(--accent) focus:outline-none"
                 />
               </div>
               <div className="space-y-2">
@@ -75,7 +75,7 @@ export default function CandidateProfilePage() {
                 <input
                   value={form.experience}
                   onChange={(e) => update("experience", e.target.value)}
-                  className="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 text-sm focus:border-[var(--accent)] focus:outline-none"
+                  className="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 text-sm focus:border-(--accent) focus:outline-none"
                 />
               </div>
             </div>
@@ -89,7 +89,7 @@ export default function CandidateProfilePage() {
                 </div>
                 <a
                   href="/candidate-resume"
-                  className="pill bg-white/10 border border-white/15 text-white hover:border-[var(--accent)] hover:scale-105 transition text-xs"
+                  className="pill bg-white/10 border border-white/15 text-white hover:border-(--accent) hover:scale-105 transition text-xs"
                 >
                   Replace
                 </a>
@@ -100,11 +100,11 @@ export default function CandidateProfilePage() {
               <button
                 type="submit"
                 disabled={saving}
-                className="pill bg-[var(--accent)] text-black font-semibold hover:scale-105 transition disabled:opacity-60"
+                className="pill bg-(--accent) text-black font-semibold hover:scale-105 transition disabled:opacity-60"
               >
                 {saving ? "Saving..." : "Save changes"}
               </button>
-              {saved && <span className="text-sm text-[var(--accent)]">Saved</span>}
+              {saved && <span className="text-sm text-(--accent)">Saved</span>}
             </div>
           </form>
         </section>

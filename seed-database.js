@@ -1,32 +1,6 @@
-import { NextResponse } from "next/server";
-import prisma from "@/lib/prisma";
-
-const dummyHRUsers = [
-  {
-    email: "sarah.recruiter@vectorhire.com",
-    password: "test123",
-    role: "ADMIN",
-    name: "Sarah Reynolds",
-    designation: "Head of Recruiting",
-    department: "Human Resources",
-  },
-  {
-    email: "james.recruiter@vectorhire.com",
-    password: "test123",
-    role: "MANAGER",
-    name: "James Chen",
-    designation: "Recruiting Manager",
-    department: "Human Resources",
-  },
-  {
-    email: "linda.recruiter@vectorhire.com",
-    password: "test123",
-    role: "MANAGER",
-    name: "Linda Martinez",
-    designation: "Talent Acquisition Manager",
-    department: "Human Resources",
-  },
-];
+// Direct database seeding script
+const { PrismaClient } = require('@prisma/client');
+const prisma = new PrismaClient();
 
 const dummyCandidates = [
   {
@@ -147,52 +121,21 @@ const dummyCandidates = [
     candidateScore: 90,
     rating: 5,
   },
-  {
-    name: "JANVI SANDEEP SANAP",
-    email: "janvisanap123@gmail.com",
-    phone: "8830333302",
-    skills: "C, C++, Python, HTML, CSS, JavaScript, MySQL, MS Office",
-    experience: 0,
-    location: "Vadodara, Gujarat",
-    education: "Bachelor of Technology (B.Tech) – Computer Science Engineering, Parul University, Vadodara",
-    resumeText: "JANVI SANDEEP SANAP \n8830333302 | janvisanap123@gmail.com \nLinkedIn: janvi sanap \nVadodara, Gujarat \n\nCareer Objective \nA dedicated and curious Computer Science student with a strong foundation in programming and problem-solving. Eager to explore innovative technologies, enhance my skills, and contribute meaningfully to projects that make a real-world impact. \nEducation \n- Bachelor of Technology (B.Tech) - Computer Science Engineering(Parul University, Vadodara) \n- 2024 - 2028 \n- Current Year: 2nd Year(CGPA (1st Year): 7.72 / 10) \n- Higher Secondary Certificate (12th Grade)(Maharashtra State Board) \n- Percentage: 54% \n- Secondary School Certificate (10th Grade)Maharashtra State Board \n- Percentage: 95.20% \nSkills \n- Programming: C, C++, Python \n- Web: HTML, CSS, JavaScript \n- Database: MySQL \n- Tools: MS Office \n- Soft Skills: Communication, Teamwork, Problem-solving \nAchievements / Extra-Curricular Activities \n- Scored 95.20% in SSC Maharashtra Board \n- TRAINING AND PLACEMENT CELL COORDINATOR AT PARUL UNIVERSITY.",
-    pipelineStatus: "Applied",
-    linkedin: "https://linkedin.com/in/janvi-sanap",
-    candidateScore: 75,
-    rating: 4,
-  },
 ];
 
-export async function POST(req) {
+async function seed() {
   try {
-    // Delete existing candidate data to avoid duplicates
-    await prisma.candidate.deleteMany({});
-
-    // Create or update dummy candidates (using upsert for idempotency)
-    const createdCandidates = await Promise.all(
+    console.log('🌱 Seeding database...');
+    
+    // Clear existing data
+    const deleted = await prisma.candidate.deleteMany({});
+    console.log(`✓ Deleted ${deleted.count} existing candidates`);
+    
+    // Create candidates
+    const created = await Promise.all(
       dummyCandidates.map((c) =>
-        prisma.candidate.upsert({
-          where: { email: c.email },
-          update: {
-            name: c.name,
-            phone: c.phone,
-            skills: c.skills,
-            experienceYears: c.experience,
-            location: c.location,
-            education: c.education,
-            resumeText: c.resumeText,
-            pipelineStatus: c.pipelineStatus,
-            linkedin: c.linkedin,
-            github: c.github,
-            portfolio: c.portfolio,
-            certifications: c.certifications,
-            languages: c.languages,
-            salaryExpectation: c.salaryExpectation,
-            availability: c.availability,
-            candidateScore: c.candidateScore,
-            rating: c.rating,
-          },
-          create: {
+        prisma.candidate.create({
+          data: {
             name: c.name,
             email: c.email,
             phone: c.phone,
@@ -215,16 +158,22 @@ export async function POST(req) {
         })
       )
     );
-
-    return NextResponse.json(
-      {
-        message: `Seeded ${createdCandidates.length} candidates successfully`,
-        candidates: createdCandidates,
-      },
-      { status: 200 }
-    );
-  } catch (err) {
-    console.error("Seed error:", err);
-    return NextResponse.json({ error: "Failed to seed data", details: err.message }, { status: 500 });
+    
+    console.log(`✅ Successfully seeded ${created.length} candidates!`);
+    console.log('\nCandidates created:');
+    created.forEach(c => console.log(`  - ${c.name} (${c.email})`));
+    
+  } catch (error) {
+    console.error('❌ Error seeding database:', error.message);
+    if (error.code === 'P1001') {
+      console.error('\n💡 Database connection failed. Make sure your database is set up.');
+    } else if (error.code === 'P2021') {
+      console.error('\n💡 Table does not exist. Run: npx prisma db push');
+    }
+    process.exit(1);
+  } finally {
+    await prisma.$disconnect();
   }
 }
+
+seed();

@@ -55,13 +55,13 @@ export default function CandidatesPage() {
         <div className="flex gap-2 flex-wrap">
           <Link
             href="/upload-resume"
-            className="pill bg-[var(--accent)] text-black font-semibold hover:scale-105 transition"
+            className="pill bg-(--accent) text-black font-semibold hover:scale-105 transition"
           >
             Upload Resume
           </Link>
           <button
             onClick={fetchAll}
-            className="pill bg-white/10 border border-white/15 text-white hover:border-[var(--accent)] hover:scale-105 transition"
+            className="pill bg-white/10 border border-white/15 text-white hover:border-(--accent) hover:scale-105 transition"
           >
             Refresh
           </button>
@@ -85,7 +85,7 @@ export default function CandidatesPage() {
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Name, email, skills..."
-              className="w-full rounded-xl bg-white/5 border border-white/10 px-3 py-2 text-sm focus:border-[var(--accent)] focus:outline-none"
+              className="w-full rounded-xl bg-white/5 border border-white/10 px-3 py-2 text-sm focus:border-(--accent) focus:outline-none"
             />
           </div>
           <div className="space-y-2">
@@ -94,7 +94,7 @@ export default function CandidatesPage() {
               value={filters.skills}
               onChange={(e) => updateFilter("skills", e.target.value)}
               placeholder="e.g. Python, React"
-              className="w-full rounded-xl bg-white/5 border border-white/10 px-3 py-2 text-sm focus:border-[var(--accent)] focus:outline-none"
+              className="w-full rounded-xl bg-white/5 border border-white/10 px-3 py-2 text-sm focus:border-(--accent) focus:outline-none"
             />
           </div>
           <div className="space-y-2">
@@ -103,7 +103,7 @@ export default function CandidatesPage() {
               value={filters.experience}
               onChange={(e) => updateFilter("experience", e.target.value)}
               placeholder="e.g. 3"
-              className="w-full rounded-xl bg-white/5 border border-white/10 px-3 py-2 text-sm focus:border-[var(--accent)] focus:outline-none"
+              className="w-full rounded-xl bg-white/5 border border-white/10 px-3 py-2 text-sm focus:border-(--accent) focus:outline-none"
             />
           </div>
           <div className="space-y-2">
@@ -112,7 +112,7 @@ export default function CandidatesPage() {
               value={filters.location}
               onChange={(e) => updateFilter("location", e.target.value)}
               placeholder="e.g. Remote, NYC"
-              className="w-full rounded-xl bg-white/5 border border-white/10 px-3 py-2 text-sm focus:border-[var(--accent)] focus:outline-none"
+              className="w-full rounded-xl bg-white/5 border border-white/10 px-3 py-2 text-sm focus:border-(--accent) focus:outline-none"
             />
           </div>
         </aside>
@@ -170,7 +170,7 @@ export default function CandidatesPage() {
 
                     <Link
                       href={`/candidate/${c.id}`}
-                      className="mt-4 inline-flex items-center justify-center w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm hover:bg-white/10 hover:border-[var(--accent)] transition"
+                      className="mt-4 inline-flex items-center justify-center w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm hover:bg-white/10 hover:border-(--accent) transition"
                     >
                       View Profile
                     </Link>

@@ -66,12 +66,12 @@ export default function ApplicationsPage() {
                     </td>
                     <td className="px-4 py-4 text-gray-200">{it.company}</td>
                     <td className="px-4 py-4">
-                      <span className="pill bg-[var(--accent)] text-black text-xs">
+                      <span className="pill bg-(--accent) text-black text-xs">
                         {pipeline[Math.max(0, idx)]}
                       </span>
                       <div className="mt-2 h-1.5 w-40 rounded-full bg-white/10 overflow-hidden">
                         <div
-                          className="h-full bg-[var(--accent)]"
+                          className="h-full bg-(--accent)"
                           style={{ width: `${((idx + 1) / pipeline.length) * 100}%` }}
                         />
                       </div>
